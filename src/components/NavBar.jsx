@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 
 const NavBar = () => {
+  // State to mobile menu is open or closed
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Function to toggle the mobile menu open/closed
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -14,7 +16,7 @@ const NavBar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
             <div className="text-xl font-bold">
-            <span className="text-blue-400">TECH</span> Academy 
+              <span className="text-blue-400">TECH</span> Academy 
             </div>
         </div>
         
@@ -32,14 +34,9 @@ const NavBar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu responsive */}
       <div className={`md:hidden overflow-hidden transition-all duration-300  ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="py-2 px-4 space-y-1">
-            <div className='flex flex-col justify-center items-center'>
-                <a href="#" >Home</a>
-                <a href="#" >About</a>
-                <a href="#" >Contact</a>
-            </div>
+        <div className="p-4">
           <button className="bg-blue-500 hover:bg-blue-600 w-full py-2 px-5 rounded mt-2">Join Now</button>
         </div>
       </div>
@@ -48,6 +45,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 
 
 
